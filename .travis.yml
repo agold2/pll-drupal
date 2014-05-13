@@ -42,8 +42,8 @@ install:
   #- mkdir profiles
   #- mv panopoly profiles/
   - mkdir drupal
-  - mv .* drupal
-  - mv * druupal
+  - cd ..
+  - mv pll-drupal drupal
   #- mv profiles drupal/
 
   # Build the current branch.
