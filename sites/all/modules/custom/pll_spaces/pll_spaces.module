@@ -1,0 +1,172 @@
+<?php
+
+/**
+ * PLL Spaces module.
+ * @file
+ */
+
+
+/**
+ * Implements hook_node_insert().
+ */
+function pll_spaces_node_insert($node) {
+ /* TODO:
+  *  if ($node->type == 'pll_space_page') {
+    // Add menu link to Space Menu
+    $plid = og_menu_single_get_link_mlid_or_create('oa_space', $node->nid);
+    $link = array(
+      'mlid' => null,
+      'link_title' => $node->title,
+      'link_path' => 'node/' . $node->nid,
+      'menu_name' => OG_MENU_SINGLE_MENU_NAME,
+      'plid' => $plid,
+      'weight' => 0,
+    );
+    menu_link_save($link);
+
+  }
+ */
+  if ($node->type == 'oa_space') {
+    // Add Space Name menu link to Space Menu
+    $plid = og_menu_single_get_link_mlid_or_create('oa_space', $node->nid);
+    $link = array(
+      'mlid' => null,
+      'link_title' => $node->title,
+      'link_path' => 'node/' . $node->nid,
+      'menu_name' => OG_MENU_SINGLE_MENU_NAME,
+      'plid' => $plid,
+      'weight' => 0,
+    );
+    menu_link_save($link);
+
+    // Create Calendar Section using Entity API
+    $values = array(
+      'type' => 'oa_section',
+      'uid' => $node->uid,
+      'status' => 1,
+      'comment' => 1,
+      'promote' => 0,
+    );
+    $entity = entity_create('node', $values);
+    $ewrapper = entity_metadata_wrapper('node', $entity);
+    $ewrapper->title->set('Calendar');
+    $ewrapper->og_group_ref->set(intval($node->nid));
+    $ewrapper->field_oa_section->set(3);
+    $ewrapper->field_oa_section_override->set(0);
+    $ewrapper->field_oa_node_types->set(array('oa_event'));
+    $entity->panelizer['page_manager'] = new stdClass();
+    $entity->panelizer['page_manager']->name = 'node:oa_section:calendar_section';
+    $ewrapper->save();
+
+    // Add Calendar to Space Menu
+    $calendar_nid = $ewrapper->nid->value();
+    $link = array(
+      'mlid' => null,
+      'link_title' => 'Calendar',
+      'link_path' => 'node/' . $calendar_nid,
+      'menu_name' => OG_MENU_SINGLE_MENU_NAME,
+      'plid' => $plid,
+      'weight' => 1,
+    );
+    menu_link_save($link);
+
+    // Create Task Section using Entity API
+    $values = array(
+      'type' => 'oa_section',
+      'uid' => $node->uid,
+      'status' => 1,
+      'comment' => 1,
+      'promote' => 0,
+    );
+    $entity = entity_create('node', $values);
+    $ewrapper = entity_metadata_wrapper('node', $entity);
+    $ewrapper->title->set('Tasks');
+    $ewrapper->og_group_ref->set(intval($node->nid));
+    $ewrapper->field_oa_section->set(6);
+    $ewrapper->field_oa_section_override->set(0);
+    $ewrapper->field_oa_node_types->set(array('oa_worktracker_task'));
+    $entity->panelizer['page_manager'] = new stdClass();
+    $entity->panelizer['page_manager']->name = 'node:oa_section:oa_section_worktracker';
+    $ewrapper->save();
+
+
+    // Add Task menu link to Space Menu
+    $task_nid = $ewrapper->nid->value();
+    $link = array(
+      'mlid' => null,
+      'link_title' => 'Tasks',
+      'link_path' => 'node/' . $task_nid,
+      'menu_name' => OG_MENU_SINGLE_MENU_NAME,
+      'plid' => $plid,
+      'weight' => 2,
+    );
+    menu_link_save($link);
+
+    // Add Members menu link to Space Menu
+    $link = array(
+      'mlid' => null,
+      'link_title' => 'Members',
+      'link_path' => 'node/' . $node->nid . '/members',
+      'menu_name' => OG_MENU_SINGLE_MENU_NAME,
+      'plid' => $plid,
+      'weight' => 3,
+    );
+    menu_link_save($link);
+
+
+    // Create Announcement Section using Entity API
+    $values = array(
+      'type' => 'oa_section',
+      'uid' => $node->uid,
+      'status' => 1,
+      'comment' => 1,
+      'promote' => 0,
+    );
+    $entity = entity_create('node', $values);
+    $ewrapper = entity_metadata_wrapper('node', $entity);
+    $ewrapper->title->set('Announcements');
+    $ewrapper->og_group_ref->set(intval($node->nid));
+    $ewrapper->field_oa_section->set(5);
+    $ewrapper->field_oa_section_override->set(0);
+    $ewrapper->field_oa_node_types->set(array('oa_wiki_page'));
+    $entity->panelizer['page_manager'] = new stdClass();
+    $entity->panelizer['page_manager']->name = 'node:oa_section:news_section';
+    $ewrapper->save();
+
+
+    // TODO: Announcement, Blog Post, Learning Resource?
+
+    // Create Discussion Section using Entity API
+    $values = array(
+      'type' => 'oa_section',
+      'uid' => $node->uid,
+      'status' => 1,
+      'comment' => 1,
+      'promote' => 0,
+    );
+    $entity = entity_create('node', $values);
+    $ewrapper = entity_metadata_wrapper('node', $entity);
+    $ewrapper->title->set('Discussion Forum');
+    $ewrapper->og_group_ref->set(intval($node->nid));
+    $ewrapper->field_oa_section->set(4);
+    $ewrapper->field_oa_section_override->set(0);
+    $ewrapper->field_oa_node_types->set(array('oa_discussion_post'));
+    $entity->panelizer['page_manager'] = new stdClass();
+    $entity->panelizer['page_manager']->name = 'node:oa_section:oa_section_discussion';
+    $ewrapper->save();
+
+
+  }
+}
+
+function pll_spaces_views_pre_render(&$view) {
+  // Add Create Task button to bottom of Space Tasks pane
+  if ($view->name == 'pll_worktracker' && $view->current_display == 'task_list' && user_access('create oa_worktracker_task content')) {
+    if (isset($view->result[0])) {
+      $section = $view->result[0]->field_oa_section_ref[0]['raw']['target_id'];
+      $view->attachment_after =  l('Create Task', 'node/add/oa-worktracker-task',
+        array('query' => array('oa_section_ref' => $section), 'attributes' => array('class' => array('btn btn-primary','oa-button'))));
+    }
+  }
+}
+
