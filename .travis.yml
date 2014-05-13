@@ -34,15 +34,15 @@ install:
   - drush cc drush
 
   # Build Behat dependencies
-  - cd ./tests/behat
+  - cd ./sites/all/modules/custom/pll_tests/behat
   - composer install --prefer-source --no-interaction
-  - cd ../../../
+  - cd /home/travis/build/agold2/pll-drupal
 
   # Build Codebase
-  - mkdir profiles
-  - mv openatrium profiles/
-  - mkdir drupal
-  - mv profiles drupal/
+  #- mkdir profiles
+  #- mv panopoly profiles/
+  #- mkdir drupal
+  #- mv profiles drupal/
 
   # Build the current branch.
   #- cd drupal
@@ -52,7 +52,7 @@ install:
   - mkdir sites/default/private
   - mkdir sites/default/private/files
   - mkdir sites/default/private/temp
-  - cd ../
+  #- cd ../
 
   # Verify that all the .make files will work on Drupal.org.
   #- drush verify-makefile drupal/profiles/panopoly/drupal-org.make
@@ -62,7 +62,7 @@ install:
   #- if [[ "$UPGRADE" != none ]]; then drush dl panopoly-$UPGRADE; fi
 
   # Setup files
-  - sudo chmod -R 777 drupal/sites/all
+  - sudo chmod -R 777 sites/all
 
   # Setup display for Selenium
   - export DISPLAY=:99.0
