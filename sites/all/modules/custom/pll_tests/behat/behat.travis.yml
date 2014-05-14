@@ -13,10 +13,9 @@ default:
       blackbox: ~
       drush:
         alias: self
+        drupal_root: "/home/travis/build/agold2/drupal"
       # This will be setup by .travis.yml like so:
       # export BEHAT_PARAMS="extensions[Drupal\\DrupalExtension\\Extension][drupal][drupal_root]=$DRUPAL_ROOT"
-        drupal:
-          drupal_root: "/home/travis/build/agold2/drupal"
 
       region_map:
         # Regions for Panopoly Layouts
