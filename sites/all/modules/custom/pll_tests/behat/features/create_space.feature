@@ -16,7 +16,7 @@ Scenario: Admin creates private space
   Given I am logged in as a user with the "administrator" role
   When I visit "/node/add/oa-space"
   Then I should see "Create Default Space"
-  And I select the radio button "Private"
+  And I select the radio button "Private - accessible only to space members"
   And I fill in the following:
     | Title |Space 2 |
     | Editor | plain_text |
