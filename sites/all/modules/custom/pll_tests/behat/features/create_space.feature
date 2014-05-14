@@ -26,7 +26,7 @@ Scenario: Admin creates private space
   Then the "h1" element should contain "Space 2"
   And I should see "Private"
 
-@api javascript
+@api @javascript
 Scenario: Authenticated views space catalog
     Given I am logged in as a user with the "authenticated user" role
     When I visit "/spaces"
