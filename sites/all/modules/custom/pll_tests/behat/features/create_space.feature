@@ -12,6 +12,7 @@ Scenario: Admin creates public space
   And I press "Publish"
   Then the "h1" element should contain "Space 1"
 
+@api @javascript
 Scenario: Admin creates private space
   Given I am logged in as a user with the "administrator" role
   When I visit "/node/add/oa-space"
