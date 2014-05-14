@@ -28,7 +28,7 @@ Scenario: Admin creates private space
 
 @api javascript
 Scenario: Authenticated views space catalog
-    Given I am logged in as a user with the "authenticated" role
+    Given I am logged in as a user with the "authenticated user" role
     When I visit "/spaces"
     Then I should see "Space 1"
     And I should not see "Space 2"
