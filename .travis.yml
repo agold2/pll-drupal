@@ -20,9 +20,9 @@ env:
 
 install:
   # Add the Google Chrome packages.
-  - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+  #- wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
   #- sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-  - sudo apt-get update > /dev/null
+  #- sudo apt-get update > /dev/null
 
   # Create a database for our Drupal site.
   - "mysql -e 'create database drupal;'"
@@ -116,8 +116,8 @@ before_script:
   - cd sites/all/modules/custom/pll_tests/behat
 
   # Make the Travis tests repos agnostic by injecting drupal_root with BEHAT_PARAMS
-  - BUILD_OWNER=`dirname $TRAVIS_BUILD_DIR`
-  - export BEHAT_PARAMS="extensions[Drupal\\DrupalExtension\\Extension][drupal][drupal_root]=$BUILD_OWNER/drupal"
+  #- BUILD_OWNER=`dirname $TRAVIS_BUILD_DIR`
+  #- export BEHAT_PARAMS="extensions[Drupal\\DrupalExtension\\Extension][drupal][drupal_root]=$BUILD_OWNER/drupal"
 
 script:
 
