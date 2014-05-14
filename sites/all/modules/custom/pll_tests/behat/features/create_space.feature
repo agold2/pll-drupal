@@ -26,3 +26,9 @@ Scenario: Admin creates private space
   Then the "h1" element should contain "Space 2"
   And I should see "Private"
 
+@api javascript
+Scenario: Authenticated views space catalog
+    Given I am logged in as a user with the "authenticated" role
+    When I visit "/spaces"
+    Then I should see "Space 1"
+    And I should not see "Space 2"
