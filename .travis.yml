@@ -122,7 +122,7 @@ before_script:
 script:
 
   # First, run all the tests in Firefox.
-  - ./bin/behat --config behat.travis.yml
+  - ./bin/behat --tags='@pll' --config behat.travis.yml
 
   # Then run some Chrome-only tests.
   #- ./bin/behat --tags='@pll' --config behat.travis.yml -p chrome
