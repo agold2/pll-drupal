@@ -19,6 +19,10 @@ install:
   # Build Behat dependencies
   - cd ./sites/all/modules/custom/pll_tests/behat
   - composer install --no-interaction
+  # Fix for Call to a member function isVisible() on a non-object https://drupal.org/node/2262703
+  - cd vendor/drupal/drupal-extension
+  - wget https://drupal.org/files/issues/call_isVisible_if_result_not_null.patch
+  - patch -p0 < call_isVisible_if_result_not_null.patch
   # - cp behat.template.yml behat.local.yml
   - cd /home/travis/build/agold2/pll-drupal
 
