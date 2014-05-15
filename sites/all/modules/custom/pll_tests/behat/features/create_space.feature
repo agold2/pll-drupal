@@ -1,7 +1,6 @@
-@pll
+@pll @api
 Feature: Create space
 
-  @api
   Scenario: Admin creates public space
     Given I am logged in as a user with the "administrator" role
     When I visit "/node/add/oa-space"
@@ -14,7 +13,7 @@ Feature: Create space
     Then the "h1" element should contain "Space 1"
     Then I visit "/user/logout"
 
-  @api @javascript
+
   Scenario: Admin creates private space
     Given I am logged in as a user with the "administrator" role
     When I visit "/node/add/oa-space"
@@ -29,7 +28,6 @@ Feature: Create space
     And I should see "Private"
     Then I visit "/user/logout"
 
-  @api @javascript
   Scenario: Authenticated views space catalog
     Given I am logged in as a user with the "authenticated user" role
     When I visit "/spaces"
