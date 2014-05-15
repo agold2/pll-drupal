@@ -33,4 +33,5 @@ Feature: Create space
     When I visit "/spaces"
     Then I should see "All Spaces"
     Then I should not see the link "Space 2"
-    And I should see the link "Space 1"
+    And I click "Space 1"
+    Then the "h1" element should contain "Space 1"
