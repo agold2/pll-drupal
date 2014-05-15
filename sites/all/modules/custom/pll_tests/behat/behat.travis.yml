@@ -14,7 +14,7 @@ default:
       drupal:
         drupal_root: "/home/travis/build/agold2/pll-drupal"
       text:
-        log_in: "Login"
+        log_in: "Log in"
         log_out: "Log out"
       region_map:
         # Regions for Panopoly Layouts
