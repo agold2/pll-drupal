@@ -31,5 +31,6 @@ Feature: Create space
   Scenario: Authenticated views space catalog
     Given I am logged in as a user with the "authenticated user" role
     When I visit "/spaces"
+    Then I should see "All Spaces"
     Then I should not see the link "Space 2"
     And I should see the link "Space 1"
