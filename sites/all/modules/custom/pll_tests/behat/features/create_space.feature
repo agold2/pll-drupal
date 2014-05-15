@@ -1,7 +1,7 @@
 @pll
 Feature: Create space
 
-  @api @javascript
+  @api
   Scenario: Admin creates public space
     Given I am logged in as a user with the "administrator" role
     When I visit "/node/add/oa-space"
@@ -12,6 +12,7 @@ Feature: Create space
       | body[und][0][value] | Testing text body |
     And I press "Publish"
     Then the "h1" element should contain "Space 1"
+    Then I visit "/user/logout"
 
   @api @javascript
   Scenario: Admin creates private space
@@ -26,6 +27,7 @@ Feature: Create space
     And I press "Publish"
     Then the "h1" element should contain "Space 2"
     And I should see "Private"
+    Then I visit "/user/logout"
 
   @api @javascript
   Scenario: Authenticated views space catalog
