@@ -28,9 +28,8 @@ Feature: Create space
     And I should see "Private"
     Then I visit "/user/logout"
 
-  @javascript
   Scenario: Authenticated views space catalog
     Given I am logged in as a user with the "authenticated user" role
     When I visit "/spaces"
-    Then I should see the link "Space 1"
-    And I should not see the link "Space 2"
+    Then I should not see the link "Space 2"
+    And I should see the link "Space 1"
