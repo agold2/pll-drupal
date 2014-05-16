@@ -15,6 +15,9 @@ function pll_oa_layouts_features_override_default_overrides() {
   $overrides["field_base.group_access.settings|allowed_values|0"] = 'Open - accessible to all site users';
   $overrides["field_base.group_access.settings|allowed_values|1"] = 'Private - accessible only to space members';
 
+  // Exported overrides for: field_instance
+  $overrides["field_instance.node-oa_space-body.required"] = 1;
+
   // Exported overrides for: panelizer_defaults
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-2ef72fbd-6a52-407d-9f90-eff0b2c09771"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de|position"] = 0;

@@ -43,6 +43,15 @@ function pll_oa_layouts_field_default_field_bases_alter(&$data) {
 }
 
 /**
+ * Implements hook_field_default_field_instances_alter().
+ */
+function pll_oa_layouts_field_default_field_instances_alter(&$data) {
+  if (isset($data['node-oa_space-body'])) {
+    $data['node-oa_space-body']['required'] = 1; /* WAS: 0 */
+  }
+}
+
+/**
  * Implements hook_panelizer_defaults_override_alter().
  */
 function pll_oa_layouts_panelizer_defaults_override_alter(&$data) {
