@@ -30,8 +30,5 @@ function pll_oa_layouts_features_override_default_overrides() {
     'show_links' => 0,
   );
 
-  // Exported overrides for: variable
-  $overrides["variable.pathauto_node_oa_space_pattern.value"] = 'space/[node:title]';
-
  return $overrides;
 }

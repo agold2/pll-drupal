@@ -12,6 +12,7 @@ Feature: Spaces
     And I press "Publish"
     Then I should see "Space Type field is required."
     Then I should see "Title field is required."
+    Then I should see "Description field is required."
     And I fill in the following:
       | Title |Space 1 |
       | Editor | plain_text |
@@ -25,7 +26,7 @@ Feature: Spaces
     And I fill in the following:
       | Title |Space 1 |
       | Editor | plain_text |
-    #  | body[und][0][value] | Testing text body |
+      | body[und][0][value] | Testing text body |
     And I select "Project Based Community" from "Space Type"
     And I press "Publish"
     Then I should see "The Title field requires a unique value"
