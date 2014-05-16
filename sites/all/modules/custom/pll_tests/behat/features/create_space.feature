@@ -12,7 +12,7 @@ Feature: Space access control
     And I fill in the following:
       | Title |Space 1 |
       | Editor | plain_text |
-      | body[und][0][value] | Testing text body |
+      | body[und][0][value] | This description of open Space 1 will appear in the Space search results for authenticated users. |
     And I select "Interest Based Community" from "Space Type"
     And I press "Publish"
     Then the "h1" element should contain "Space 1"
@@ -22,7 +22,7 @@ Feature: Space access control
     And I fill in the following:
       | Title |Space 1 |
       | Editor | plain_text |
-      | body[und][0][value] | Testing text body |
+    #  | body[und][0][value] | Testing text body |
     And I select "Project Based Community" from "Space Type"
     And I press "Publish"
     Then I should see "The Title field requires a unique value"
@@ -38,5 +38,11 @@ Feature: Space access control
     And I visit "/spaces"
     Then I should see "All Spaces"
     Then I should not see the link "Space 2"
+    Then I should see "This description of open Space 1 will appear in the Space search results for authenticated users."
     And I click "Space 1"
     Then the "h1" element should contain "Space 1"
+    And I should not see "This description of open Space 1 will appear in the Space search results for authenticated users."
+    Then I should see "created Calendar"
+    Then I should see "created Tasks"
+    Then I should see "created Announcements"
+    Then I should see "created Discussion Forum"
