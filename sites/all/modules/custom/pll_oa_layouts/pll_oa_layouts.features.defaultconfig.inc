@@ -11,6 +11,7 @@ function pll_oa_layouts_defaultconfig_features() {
   return array(
     'pll_oa_layouts' => array(
       'field_default_fields' => 'field_default_fields',
+      'strongarm' => 'strongarm',
     ),
   );
 }
@@ -101,4 +102,45 @@ function pll_oa_layouts_defaultconfig_field_default_fields() {
   t('Space Type');
 
   return $fields;
+}
+
+/**
+ * Implements hook_defaultconfig_strongarm().
+ */
+function pll_oa_layouts_defaultconfig_strongarm() {
+  $export = array();
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'unique_field_comp_oa_space';
+  $strongarm->value = 'each';
+  $export['unique_field_comp_oa_space'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'unique_field_fields_oa_space';
+  $strongarm->value = array(
+    0 => 'title',
+  );
+  $export['unique_field_fields_oa_space'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'unique_field_scope_oa_space';
+  $strongarm->value = 'type';
+  $export['unique_field_scope_oa_space'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'unique_field_show_matches_oa_space';
+  $strongarm->value = array(
+    0 => 'show_matches',
+  );
+  $export['unique_field_show_matches_oa_space'] = $strongarm;
+
+  return $export;
 }

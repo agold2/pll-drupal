@@ -6,6 +6,9 @@ Feature: Space access control
     When I visit "/node/add/oa-space"
     Then I should see "Create Default Space"
     Then I should see "Open - accessible to all site users"
+    And I press "Publish"
+    Then I should see "Space Type field is required."
+    Then I should see "Title field is required."
     And I fill in the following:
       | Title |Space 1 |
       | Editor | plain_text |
@@ -17,10 +20,13 @@ Feature: Space access control
     Then I should see "Create Default Space"
     And I select the radio button "Private - accessible only to space members"
     And I fill in the following:
-      | Title |Space 2 |
+      | Title |Space 1 |
       | Editor | plain_text |
       | body[und][0][value] | Testing text body |
     And I select "Project Based Community" from "Space Type"
+    And I press "Publish"
+    Then I should see "The Title field requires a unique value"
+    And I fill in "Space 2" for "Title"
     And I press "Publish"
     Then the "h1" element should contain "Space 2"
     And I should see "Private"
