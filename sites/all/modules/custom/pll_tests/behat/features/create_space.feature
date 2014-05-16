@@ -1,7 +1,10 @@
 @pll @api
-Feature: Space access control
+Feature: Spaces
+  As a product owner
+  I need to know that Spaces are working as intended
+  In order for members to collaborate
 
-  Scenario: Space access control
+  Scenario: Spaces
     Given I am logged in as a user with the "administrator" role
     When I visit "/node/add/oa-space"
     Then I should see "Create Default Space"

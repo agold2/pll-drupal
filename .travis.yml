@@ -54,7 +54,7 @@ before_script:
 
   - drush runserver --server=builtin 8888 > /dev/null 2>&1 &
   - drush en pll_oa_layouts -y
-  #- drush vset pathauto_node_oa_space_pattern "space/[node:title]"
+  - drush vset pathauto_node_oa_space_pattern "space/[node:title]"
   - sleep 3
   - cd sites/all/modules/custom/pll_tests/behat
 
