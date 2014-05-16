@@ -73,3 +73,12 @@ function pll_oa_layouts_panelizer_defaults_override_alter(&$data) {
     ); /* WAS: '' */
   }
 }
+
+/**
+ * Implements hook_strongarm_alter().
+ */
+function pll_oa_layouts_strongarm_alter(&$data) {
+  if (isset($data['pathauto_node_oa_space_pattern'])) {
+    $data['pathauto_node_oa_space_pattern']->value = 'space/[node:title]'; /* WAS: '[node:title]' */
+  }
+}
