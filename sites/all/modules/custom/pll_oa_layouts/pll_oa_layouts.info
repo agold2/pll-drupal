@@ -14,6 +14,7 @@ dependencies[] = page_manager
 dependencies[] = panelizer
 dependencies[] = panels
 dependencies[] = panels_mini
+dependencies[] = pll_spaces
 dependencies[] = strongarm
 dependencies[] = unique_field
 dependencies[] = views
