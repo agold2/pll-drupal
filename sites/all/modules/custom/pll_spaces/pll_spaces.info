@@ -2,3 +2,4 @@ name = PLL Spaces
 description = Open Atrium Spaces for Professional Learning Library
 core = 7.x
 dependencies[] = oa_core
+dependencies[] = unique_field

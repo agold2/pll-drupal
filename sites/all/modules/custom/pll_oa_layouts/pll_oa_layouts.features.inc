@@ -41,14 +41,3 @@ function pll_oa_layouts_field_default_field_bases_alter(&$data) {
     $data['group_access']['settings']['allowed_values']['1'] = 'Private - accessible only to space members'; /* WAS: 'Public - accessible to all site users' */
   }
 }
-
-/**
- * Implements hook_field_default_field_instances_alter().
- */
-function pll_oa_layouts_field_default_field_instances_alter(&$data) {
-  if (isset($data['node-oa_space-group_access'])) {
-    $data['node-oa_space-group_access']['comment_alter'] = 0; /* WAS: '' */
-    $data['node-oa_space-group_access']['required'] = 1; /* WAS: TRUE */
-    $data['node-oa_space-group_access']['widget']['active'] = 1; /* WAS: '' */
-  }
-}
