@@ -1,0 +1,12 @@
+diff --git a/command_buttons.module b/command_buttons.module
+index ba5b39e..ec048f1 100644
+--- a/command_buttons.module
++++ b/command_buttons.module
+@@ -814,6 +814,7 @@ function command_buttons_machine_name_load($buttons) {
+     ->fields('b', array('bid'))
+     ->condition('bundle', 'node_add')
+     ->condition('name', $buttons, 'IN')
++    ->orderBy('title')
+     ->execute();
+ 
+   while ($result = $results->fetchObject()) {
