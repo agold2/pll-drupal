@@ -78,7 +78,7 @@ function pll_bootstrap_preprocess_page(&$variables) {
     $variables['navbar_middle_classes_array'][] = 'navbar-middle-default';
   }
 
-  // Middle Nav
+  // Bottom Nav
   $variables['navbar_bottom_classes_array'] = array('navbar-bottom');
 
   if (theme_get_setting('bootstrap_navbar_position') !== '') {
@@ -93,6 +93,8 @@ function pll_bootstrap_preprocess_page(&$variables) {
   else {
     $variables['navbar_bottom_classes_array'][] = 'navbar-bottom-default';
   }
+  // Fluid Content 
+  $variables['fluid_content_classes_array'] = array('fluid-content');
 }
 /**
  * Implements hook_process_page().
@@ -105,6 +107,7 @@ function pll_bootstrap_process_page(&$variables) {
   $variables['navbar_middle_classes'] = implode(' ', $variables['navbar_middle_classes_array']);
   $variables['navbar_bottom_classes'] = implode(' ', $variables['navbar_bottom_classes_array']);
   $variables['asu_footer_classes'] = implode(' ', $variables['asu_footer_classes_array']);
+  $variables['fluid_content_classes'] = implode(' ', $variables['fluid_content_classes_array']);
 }
 function pll_bootstrap_preprocess_status_messages(&$variables) {
 }
@@ -154,3 +157,4 @@ function pll_bootstrap_status_messages($variables) {
   }
   return $output;
 }
+

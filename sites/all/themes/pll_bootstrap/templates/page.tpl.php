@@ -126,6 +126,15 @@
   </div>
 </header>
 
+<div class="fluid-container">
+  <div id="fluid-content" role="banner" class="<?php print $fluid_content_classes; ?>">
+    <div class="fluid-content">
+      <?php if (!empty($page['fluid_content'])): ?>
+        <?php print render($page['fluid_content']); ?>
+      <?php endif; ?>
+    </div>
+  </div>
+</div>
 <div class="main-container container">
 
   <header role="banner" id="page-header">
