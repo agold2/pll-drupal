@@ -65,6 +65,9 @@ function pll_oa_layouts_og_features_default_permissions_alter(&$data) {
  */
 function pll_oa_layouts_panelizer_defaults_override_alter(&$data) {
   if (isset($data['node:oa_space:default'])) {
+    $data['node:oa_space:default']->display->content['new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54']->configuration['context'] = array(
+      0 => 'panelizer',
+    ); /* WAS: '' */
     $data['node:oa_space:default']->display->content['new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54']->position = 5; /* WAS: 2 */
     $data['node:oa_space:default']->display->content['new-2b5ef25a-4dce-4b89-99b7-f940adbd5e95']->position = 3; /* WAS: 1 */
     $data['node:oa_space:default']->display->content['new-38d9638d-d499-46ff-93fa-84400cb97eca'] = (object) array(
@@ -75,13 +78,11 @@ function pll_oa_layouts_panelizer_defaults_override_alter(&$data) {
           'shown' => TRUE,
           'access' => array(),
           'configuration' => array(
-            'context' => array(
-              0 => 'panelizer',
-            ),
             'override_title' => 0,
             'override_title_text' => '',
           ),
           'cache' => array(),
+          'style' => '',
           'css' => array(),
           'extras' => array(),
           'position' => 0,
@@ -97,6 +98,7 @@ function pll_oa_layouts_panelizer_defaults_override_alter(&$data) {
           'access' => array(),
           'configuration' => array(),
           'cache' => array(),
+          'style' => '',
           'css' => array(),
           'extras' => array(),
           'position' => 1,
@@ -146,6 +148,7 @@ function pll_oa_layouts_panelizer_defaults_override_alter(&$data) {
             'widget_title' => 'Tasks',
           ),
           'cache' => array(),
+          'style' => '',
           'css' => array(),
           'extras' => array(),
           'position' => 2,
@@ -171,6 +174,7 @@ function pll_oa_layouts_panelizer_defaults_override_alter(&$data) {
             'override_title_text' => '<none>',
           ),
           'cache' => array(),
+          'style' => '',
           'css' => array(),
           'extras' => array(),
           'position' => 0,
@@ -178,12 +182,9 @@ function pll_oa_layouts_panelizer_defaults_override_alter(&$data) {
           'uuid' => 'af6554c6-9ade-4062-8bef-eafa5b76f324',
         ); /* WAS: '' */
     $data['node:oa_space:default']->display->panels['contentmain']['0'] = 'new-38d9638d-d499-46ff-93fa-84400cb97eca'; /* WAS: 'new-2ef72fbd-6a52-407d-9f90-eff0b2c09771' */
-    $data['node:oa_space:default']->display->panels['sidebar']['0'] = 'new-af6554c6-9ade-4062-8bef-eafa5b76f324'; /* WAS: 'new-801d2668-fa45-4031-83ba-e7d47830a8a6' */
-    $data['node:oa_space:default']->display->panels['sidebar']['1'] = 'new-4d748cc2-47b4-4fb4-96e8-7aba2962a58e'; /* WAS: 'new-2b5ef25a-4dce-4b89-99b7-f940adbd5e95' */
-    $data['node:oa_space:default']->display->panels['sidebar']['2'] = 'new-a769a0a6-50cf-4404-b00f-3f4232914e18'; /* WAS: 'new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54' */
-    $data['node:oa_space:default']->display->panels['sidebar']['3'] = 'new-2b5ef25a-4dce-4b89-99b7-f940adbd5e95'; /* WAS: '' */
-    $data['node:oa_space:default']->display->panels['sidebar']['4'] = 'new-801d2668-fa45-4031-83ba-e7d47830a8a6'; /* WAS: '' */
-    $data['node:oa_space:default']->display->panels['sidebar']['5'] = 'new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54'; /* WAS: '' */
+    $data['node:oa_space:default']->display->panels['sidebar']['3'] = 'new-4d748cc2-47b4-4fb4-96e8-7aba2962a58e'; /* WAS: '' */
+    $data['node:oa_space:default']->display->panels['sidebar']['4'] = 'new-a769a0a6-50cf-4404-b00f-3f4232914e18'; /* WAS: '' */
+    $data['node:oa_space:default']->display->panels['sidebar']['5'] = 'new-af6554c6-9ade-4062-8bef-eafa5b76f324'; /* WAS: '' */
     $data['node:oa_space:default']->extra['panels_breadcrumbs_home'] = 0; /* WAS: '' */
     $data['node:oa_space:default']->extra['panels_breadcrumbs_paths'] = '/spaces/'; /* WAS: '' */
     $data['node:oa_space:default']->extra['panels_breadcrumbs_state'] = 0; /* WAS: '' */
