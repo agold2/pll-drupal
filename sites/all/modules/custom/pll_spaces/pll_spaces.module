@@ -156,6 +156,26 @@ function pll_spaces_node_insert($node) {
     $ewrapper->save();
 
 
+    // Create Blog Section using Entity API
+    $values = array(
+      'type' => 'oa_section',
+      'uid' => $node->uid,
+      'status' => 1,
+      'comment' => 1,
+      'promote' => 0,
+    );
+    $entity = entity_create('node', $values);
+    $ewrapper = entity_metadata_wrapper('node', $entity);
+    $ewrapper->title->set('Blog');
+    $ewrapper->og_group_ref->set(intval($node->nid));
+    $ewrapper->field_oa_section->set(7); // tid = 7 for Blog
+    $ewrapper->field_oa_section_override->set(0);
+    $ewrapper->field_oa_node_types->set(array('oa_blog'));
+    $entity->panelizer['page_manager'] = new stdClass();
+    $entity->panelizer['page_manager']->name = 'node:oa_section:oa_section_blog';
+    $ewrapper->save();
+
+
   }
 }
 
