@@ -29,10 +29,13 @@ class FeatureContext extends DrupalContext
    * @param array $parameters context parameters (set them up through behat.yml)
    */
   public function __construct(array $parameters) {
+    // Ignore PHP Notices
+    error_reporting(0);
     // Initialize your context here
     $this->useContext('panels', new PanelsSubContext());
     $this->useContext('wysiwyg', new WysiwygSubContext());
     $this->useContext('media', new MediaSubContext());
+    $this->useContext('pll', new PLLSubContext());
   }
 
 //
