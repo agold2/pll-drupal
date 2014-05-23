@@ -52,6 +52,15 @@ function pll_oa_layouts_field_default_field_instances_alter(&$data) {
 }
 
 /**
+ * Implements hook_og_features_default_permissions_alter().
+ */
+function pll_oa_layouts_og_features_default_permissions_alter(&$data) {
+  if (isset($data['node:oa_group:subscribe without approval'])) {
+    unset($data['node:oa_group:subscribe without approval']);
+  }
+}
+
+/**
  * Implements hook_panelizer_defaults_override_alter().
  */
 function pll_oa_layouts_panelizer_defaults_override_alter(&$data) {

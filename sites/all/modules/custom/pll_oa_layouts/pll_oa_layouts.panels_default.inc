@@ -99,7 +99,7 @@ function pll_oa_layouts_default_panels_mini() {
     $display->content['new-544b6e17-bef0-4cf5-84a8-2d68dc155286'] = $pane;
     $display->panels['middle'][1] = 'new-544b6e17-bef0-4cf5-84a8-2d68dc155286';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-544b6e17-bef0-4cf5-84a8-2d68dc155286';
+  $display->title_pane = '0';
   $mini->display = $display;
   $export['pll_space_activity'] = $mini;
 

@@ -18,6 +18,9 @@ function pll_oa_layouts_features_override_default_overrides() {
   // Exported overrides for: field_instance
   $overrides["field_instance.node-oa_space-body.required"] = 1;
 
+  // Exported overrides for: og_features_permission
+  $overrides["og_features_permission.node:oa_group:subscribe without approval.node:oa_group:subscribe without approval"]["DELETED"] = TRUE;
+
   // Exported overrides for: panelizer_defaults
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54|position"] = 5;
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-2b5ef25a-4dce-4b89-99b7-f940adbd5e95|position"] = 3;
