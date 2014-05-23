@@ -53,7 +53,6 @@ function pll_oa_layouts_defaultconfig_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'oa_space',
-      'comment_alter' => 0,
       'default_value' => NULL,
       'deleted' => 0,
       'description' => 'This description of the Space will appear on the Space Page.',
@@ -178,9 +177,96 @@ function pll_oa_layouts_defaultconfig_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-oa_space-og_roles_permissions'.
+  $fields['node-oa_space-og_roles_permissions'] = array(
+    'field_config' => array(
+      'active' => 1,
+      'cardinality' => 1,
+      'deleted' => 0,
+      'entity_types' => array(),
+      'field_name' => 'og_roles_permissions',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => 0,
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Use default roles and permissions',
+          1 => 'Override default roles and permissions',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => 0,
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'oa_space',
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'deleted' => 0,
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 9,
+        ),
+        'featured' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'og_roles_permissions',
+      'label' => 'Group roles and permissions',
+      'required' => TRUE,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'view modes' => array(
+        'full' => array(
+          'custom settings' => FALSE,
+          'label' => 'Full',
+          'type' => 'list_default',
+        ),
+        'teaser' => array(
+          'custom settings' => FALSE,
+          'label' => 'Teaser',
+          'type' => 'list_default',
+        ),
+      ),
+      'widget' => array(
+        'module' => 'options',
+        'settings' => array(
+          'apply_chosen' => 0,
+        ),
+        'type' => 'options_select',
+        'weight' => 10,
+      ),
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Description');
+  t('Group roles and permissions');
   t('Space Type');
   t('This description of the Space will appear on the Space Page.');
 

@@ -58,6 +58,9 @@ function pll_oa_layouts_og_features_default_permissions_alter(&$data) {
   if (isset($data['node:oa_group:subscribe without approval'])) {
     unset($data['node:oa_group:subscribe without approval']);
   }
+  if (isset($data['node:oa_space:subscribe without approval'])) {
+    unset($data['node:oa_space:subscribe without approval']);
+  }
 }
 
 /**
