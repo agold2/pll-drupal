@@ -55,139 +55,17 @@ function pll_oa_layouts_field_default_field_instances_alter(&$data) {
  * Implements hook_og_features_default_permissions_alter().
  */
 function pll_oa_layouts_og_features_default_permissions_alter(&$data) {
-  if (isset($data['node:oa_group:administer taxonomy'])) {
-    unset($data['node:oa_group:administer taxonomy']);
-  }
-  if (isset($data['node:oa_group:approve and deny subscription'])) {
-    unset($data['node:oa_group:approve and deny subscription']);
-  }
-  if (isset($data['node:oa_group:create oa_discussion_post content'])) {
-    unset($data['node:oa_group:create oa_discussion_post content']);
-  }
-  if (isset($data['node:oa_group:delete terms'])) {
-    unset($data['node:oa_group:delete terms']);
-  }
-  if (isset($data['node:oa_group:edit terms'])) {
-    unset($data['node:oa_group:edit terms']);
-  }
-  if (isset($data['node:oa_group:manage appearance'])) {
-    unset($data['node:oa_group:manage appearance']);
-  }
-  if (isset($data['node:oa_group:manage members'])) {
-    unset($data['node:oa_group:manage members']);
-  }
-  if (isset($data['node:oa_group:manage menu'])) {
-    unset($data['node:oa_group:manage menu']);
-  }
-  if (isset($data['node:oa_group:manage permissions'])) {
-    unset($data['node:oa_group:manage permissions']);
-  }
-  if (isset($data['node:oa_group:manage roles'])) {
-    unset($data['node:oa_group:manage roles']);
-  }
-  if (isset($data['node:oa_group:manage variables'])) {
-    unset($data['node:oa_group:manage variables']);
-  }
+
   if (isset($data['node:oa_group:subscribe without approval'])) {
-    unset($data['node:oa_group:subscribe without approval']);
-  }
-  if (isset($data['node:oa_group:trash any content'])) {
-    unset($data['node:oa_group:trash any content']);
-  }
-  if (isset($data['node:oa_group:untrash any content'])) {
-    unset($data['node:oa_group:untrash any content']);
-  }
-  if (isset($data['node:oa_group:update group'])) {
-    unset($data['node:oa_group:update group']);
-  }
-  if (isset($data['node:oa_group:use any oa button space_type'])) {
-    unset($data['node:oa_group:use any oa button space_type']);
-  }
-  if (isset($data['node:oa_group:view trash bin'])) {
-    unset($data['node:oa_group:view trash bin']);
-  }
-  if (isset($data['node:oa_group:write oa_discussion_reply to discussion post'])) {
-    unset($data['node:oa_group:write oa_discussion_reply to discussion post']);
-  }
-  if (isset($data['node:oa_space:add attachment to oa_discussion_post'])) {
-    unset($data['node:oa_space:add attachment to oa_discussion_post']);
-  }
-  if (isset($data['node:oa_space:add user'])) {
-    unset($data['node:oa_space:add user']);
-  }
-  if (isset($data['node:oa_space:administer group'])) {
-    unset($data['node:oa_space:administer group']);
-  }
-  if (isset($data['node:oa_space:administer taxonomy'])) {
-    unset($data['node:oa_space:administer taxonomy']);
-  }
-  if (isset($data['node:oa_space:approve and deny subscription'])) {
-    unset($data['node:oa_space:approve and deny subscription']);
-  }
-  if (isset($data['node:oa_space:create oa_discussion_post content'])) {
-    unset($data['node:oa_space:create oa_discussion_post content']);
-  }
-  if (isset($data['node:oa_space:create oa_event content'])) {
-    unset($data['node:oa_space:create oa_event content']);
-  }
-  if (isset($data['node:oa_space:create oa_wiki_page content'])) {
-    unset($data['node:oa_space:create oa_wiki_page content']);
-  }
-  if (isset($data['node:oa_space:delete terms'])) {
-    unset($data['node:oa_space:delete terms']);
-  }
-  if (isset($data['node:oa_space:edit terms'])) {
-    unset($data['node:oa_space:edit terms']);
-  }
-  if (isset($data['node:oa_space:manage appearance'])) {
-    unset($data['node:oa_space:manage appearance']);
-  }
-  if (isset($data['node:oa_space:manage members'])) {
-    unset($data['node:oa_space:manage members']);
-  }
-  if (isset($data['node:oa_space:manage menu'])) {
-    unset($data['node:oa_space:manage menu']);
-  }
-  if (isset($data['node:oa_space:manage permissions'])) {
-    unset($data['node:oa_space:manage permissions']);
-  }
-  if (isset($data['node:oa_space:manage roles'])) {
-    unset($data['node:oa_space:manage roles']);
-  }
-  if (isset($data['node:oa_space:manage variables'])) {
-    unset($data['node:oa_space:manage variables']);
-  }
-  if (isset($data['node:oa_space:subscribe without approval'])) {
-    unset($data['node:oa_space:subscribe without approval']);
-  }
-  if (isset($data['node:oa_space:subscribe'])) {
-    unset($data['node:oa_space:subscribe']);
-  }
-  if (isset($data['node:oa_space:trash any content'])) {
-    unset($data['node:oa_space:trash any content']);
-  }
-  if (isset($data['node:oa_space:unsubscribe'])) {
-    unset($data['node:oa_space:unsubscribe']);
-  }
-  if (isset($data['node:oa_space:untrash any content'])) {
-    unset($data['node:oa_space:untrash any content']);
-  }
-  if (isset($data['node:oa_space:update any oa_worktracker_task content'])) {
-    unset($data['node:oa_space:update any oa_worktracker_task content']);
-  }
-  if (isset($data['node:oa_space:update group'])) {
-    unset($data['node:oa_space:update group']);
-  }
-  if (isset($data['node:oa_space:use any oa button space_type'])) {
-    unset($data['node:oa_space:use any oa button space_type']);
-  }
-  if (isset($data['node:oa_space:view trash bin'])) {
-    unset($data['node:oa_space:view trash bin']);
-  }
-  if (isset($data['node:oa_space:write oa_discussion_reply to discussion post'])) {
-    unset($data['node:oa_space:write oa_discussion_reply to discussion post']);
+    $data['node:oa_group:subscribe without approval'] = array(
+      'roles' => array(
+        'non-member' => 'non-member',
+      ),
+    );
   }
 }
+
+
 
 /**
  * Implements hook_default_og_membership_type_alter().
@@ -351,11 +229,5 @@ function pll_oa_layouts_panelizer_defaults_override_alter(&$data) {
 function pll_oa_layouts_strongarm_alter(&$data) {
   if (isset($data['pathauto_node_oa_space_pattern'])) {
     $data['pathauto_node_oa_space_pattern']->value = 'space/[node:title]'; /* WAS: '[node:title]' */
-  }
-  if (isset($data['variable_realm_list_og'])) {
-    $data['variable_realm_list_og']->value['2'] = 'oa_worktracker_assigned_to_users'; /* WAS: '' */
-    $data['variable_realm_list_og']->value['3'] = 'oa_worktracker_allowed_values_priority'; /* WAS: '' */
-    $data['variable_realm_list_og']->value['4'] = 'oa_worktracker_allowed_values_task_status'; /* WAS: '' */
-    $data['variable_realm_list_og']->value['5'] = 'oa_worktracker_allowed_values_task_type'; /* WAS: '' */
   }
 }
