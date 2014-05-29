@@ -97,6 +97,8 @@ function pll_bootstrap_preprocess_page(&$variables) {
   // Fluid Content 
   $variables['fluid_content_classes_array'] = array('fluid-content');
 
+
+  ctools_include('content');
   $variables['oa_space_menu'] = '';
   $space_id = oa_core_get_space_context();
   if (variable_get('oa_space_menu_' . $space_id, TRUE)) {
