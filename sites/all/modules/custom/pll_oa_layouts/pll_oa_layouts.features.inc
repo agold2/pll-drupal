@@ -51,21 +51,6 @@ function pll_oa_layouts_field_default_field_instances_alter(&$data) {
   }
 }
 
-/**
- * Implements hook_og_features_default_permissions_alter().
- */
-function pll_oa_layouts_og_features_default_permissions_alter(&$data) {
-
-  if (isset($data['node:oa_group:subscribe without approval'])) {
-    $data['node:oa_group:subscribe without approval'] = array(
-      'roles' => array(
-        'non-member' => 'non-member',
-      ),
-    );
-  }
-}
-
-
 
 /**
  * Implements hook_default_og_membership_type_alter().

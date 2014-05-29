@@ -13,7 +13,7 @@ function pll_oa_layouts_features_override_default_overrides() {
 
   // Exported overrides for: field_base
   $overrides["field_base.group_access.settings|allowed_values|0"] = 'Open - accessible to all site users';
-  $overrides["field_base.group_access.settings|allowed_values|1"] = 'Private - accessible only to space members';
+  $overrides["field_base.group_access.settings|allowed_values|1"] = 'By Invitation - accessible only to space members';
 
   // Exported overrides for: field_instance
   $overrides["field_instance.node-oa_space-body.required"] = 1;
