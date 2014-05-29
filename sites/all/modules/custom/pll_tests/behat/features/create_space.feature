@@ -19,7 +19,6 @@ Feature: Spaces
     And I press "Create new account"
     Then I should see "Created a new user account for auth."
 
-  @now
   Scenario: Admin creates open space
     Given I am on "/user/login"
     And I fill in "admin" for "Username"
@@ -75,7 +74,7 @@ Feature: Spaces
     Then the "h1" element should contain "Space 2"
     And I should see "Private"
 
-  Scenario: Space access control
+  Scenario: Authenticated user can see Open space, cannot see Private space
     Given I am on "/user/login"
     And I fill in "auth" for "Username"
     And I fill in "auth" for "Password"
@@ -95,18 +94,18 @@ Feature: Spaces
     Then I should see "created Discussion Forum"
     Then I should see "test discuss"
 
-
-  Scenario: Join open space
+  @now
+  Scenario: Authenticated user can request to join open space
     Given I am on "/user/login"
     And I fill in "auth" for "Username"
     And I fill in "auth" for "Password"
     And I press "Log in"
     And I go to "/space/space-1"
     Then the "h1" element should contain "Space 1"
-    And I click "Subscribe to space"
-    Then I should see "Are you sure you want to join the group Space 1?"
-    And I press "Join"
+    And I click "Request to join space"
+
     Then the "h1" element should contain "Space 1"
+    Then I should see a ".pane-add-space-content" element
     And I click the add space content button
     And I click "Discussion Post"
     Then I should see "Create Discussion Post"
@@ -122,10 +121,27 @@ Feature: Spaces
     And I should see "Reply"
     #Then the "h2" element should contain "Let's discuss"
 
+  @now
+  Scenario: Anonymous user cannot create space content
+    Given I am on "/space/space-1"
+    Then I should not see a ".pane-add-space-content" element
+
+  @now
+  Scenario: Anonymous user prompted to login when attempting to subscribe to space
+    Given I am on "/space/space-1"
+    And I click "Subscribe to space"
+    Then I should see "Enter the password that accompanies your username."
 
 
+  Scenario: Anonymous sees open space content
+    Given I am on "/space/space-1"
+    And I click "Space 1"
+    Then the "h1" element should contain "Space 1"
+    Then I should see "created Calendar"
+    Then I should see "created Tasks"
+    Then I should see "created Announcements"
+    Then I should see "created Discussion Forum"
+    Then I should see "test discuss"
 
 
-
-
-
+  Scenario:
