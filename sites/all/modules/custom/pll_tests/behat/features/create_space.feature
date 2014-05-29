@@ -54,14 +54,14 @@ Feature: Spaces
 
 
 
-  Scenario: Create Private Space
+  Scenario: Create By Invitation Space
     Given I am on "/user/login"
     And I fill in "admin" for "Username"
     And I fill in "admin" for "Password"
     And I press "Log in"
     When I visit "/node/add/oa-space"
     Then I should see "Create Default Space"
-    And I select the radio button "Private - accessible only to space members"
+    And I select the radio button "By Invitation - accessible only to space members"
     And I fill in the following:
       | Title |Space 1 |
       | Editor | plain_text |
@@ -102,34 +102,48 @@ Feature: Spaces
     And I press "Log in"
     And I go to "/space/space-1"
     Then the "h1" element should contain "Space 1"
-    And I click "Request to join space"
+    And I click "Request space membership"
+    Then I should see "Are you sure you want to join the group Space 1?"
+    And I fill in "Excited to collaborate with you!" for "Request message"
+    And I press "Join"
+    Then I should see "Unsubscribe from space"
 
-    Then the "h1" element should contain "Space 1"
-    Then I should see a ".pane-add-space-content" element
-    And I click the add space content button
-    And I click "Discussion Post"
-    Then I should see "Create Discussion Post"
-    Then I should see "Notifications"
-    And I press "Publish"
-    Then I should see "Title field is required."
-    And I fill in the following:
-      | Title |discussion started by space member|
-      | Editor | plain_text |
-      | body[und][0][value] | Body field text for discussion post. |
-    And I press "Publish"
-    Then I should see "discussion started by space member"
-    And I should see "Reply"
+  Scenario: Space admin adds pending user to space
+    Given I am on "/user/login"
+    And I fill in "admin" for "Username"
+    And I fill in "admin" for "Password"
+    And I press "Log in"
+    When I go to "/space/space-1"
+    And I click "Members"
+    And I click "Pending"
+    And I click "Authenticated user"
+    And I click "Approve/Add to Space"
+    Then I should see "Authenticated user has been added to the space Space 1."
+
+#    Then the "h1" element should contain "Space 1"
+#    Then I should see a ".pane-add-space-content" element
+#    And I click the add space content button
+#    And I click "Discussion Post"
+#    Then I should see "Create Discussion Post"
+#    Then I should see "Notifications"
+#    And I press "Publish"
+#    Then I should see "Title field is required."
+#    And I fill in the following:
+#      | Title |discussion started by space member|
+#      | Editor | plain_text |
+#      | body[und][0][value] | Body field text for discussion post. |
+#    And I press "Publish"
+#    Then I should see "discussion started by space member"
+#    And I should see "Reply"
     #Then the "h2" element should contain "Let's discuss"
 
-  @now
   Scenario: Anonymous user cannot create space content
     Given I am on "/space/space-1"
     Then I should not see a ".pane-add-space-content" element
 
-  @now
   Scenario: Anonymous user prompted to login when attempting to subscribe to space
     Given I am on "/space/space-1"
-    And I click "Subscribe to space"
+    And I click "Request space membership"
     Then I should see "Enter the password that accompanies your username."
 
 
@@ -144,4 +158,3 @@ Feature: Spaces
     Then I should see "test discuss"
 
 
-  Scenario:
