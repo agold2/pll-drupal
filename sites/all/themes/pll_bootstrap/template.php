@@ -11,6 +11,7 @@
  * @see page.tpl.php
  */
 function pll_bootstrap_preprocess_page(&$variables) {
+
   // Add information about the number of sidebars.
   if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
     $variables['content_column_class'] = ' class="col-sm-6"';
@@ -95,6 +96,16 @@ function pll_bootstrap_preprocess_page(&$variables) {
   }
   // Fluid Content 
   $variables['fluid_content_classes_array'] = array('fluid-content');
+
+  $variables['oa_space_menu'] = '';
+  $space_id = oa_core_get_space_context();
+  if (variable_get('oa_space_menu_' . $space_id, TRUE)) {
+    $space_menu = ctools_content_render('oa_space_menu', '', array(), array());
+    if (!empty($space_menu->content)) {
+      $variables['oa_space_menu'] = $space_menu->content;
+    }
+  }
+
 }
 /**
  * Implements hook_process_page().
@@ -157,4 +168,5 @@ function pll_bootstrap_status_messages($variables) {
   }
   return $output;
 }
+
 
