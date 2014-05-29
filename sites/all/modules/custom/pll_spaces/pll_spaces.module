@@ -10,7 +10,7 @@
  * Implements hook_node_insert().
  */
 function pll_spaces_node_insert($node) {
- /* TODO:
+ /* TODO: Add Secondary Page link to space menu when a secondary page is created
   *  if ($node->type == 'pll_space_page') {
     // Add menu link to Space Menu
     $plid = og_menu_single_get_link_mlid_or_create('oa_space', $node->nid);
