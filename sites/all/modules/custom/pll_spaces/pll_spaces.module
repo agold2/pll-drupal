@@ -209,3 +209,35 @@ function pll_spaces_views_pre_render(&$view) {
   }
 }
 
+/**
+ * Implements hook_token_info().
+ */
+function pll_spaces_token_info() {
+  $info['tokens']['node']['pll-content-type-lowercase'] = array(
+    'name' => t('PLL Content Type Name Lowercase'),
+    'description' => t('Content type name all lowercase.'),
+  );
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function pll_spaces_tokens($type, $tokens, array $data = array(), array $options = array()) {
+
+  $replacements = array();
+
+  if ($type == 'node') {
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'pll-content-type-lowercase':
+          $replacements[$original] = strtolower(node_type_get_name($data[$type]));
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  return $replacements;
+}
+
