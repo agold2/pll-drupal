@@ -38,7 +38,7 @@ function pll_oa_layouts_views_api($module = NULL, $api = NULL) {
 function pll_oa_layouts_field_default_field_bases_alter(&$data) {
   if (isset($data['group_access'])) {
     $data['group_access']['settings']['allowed_values']['0'] = 'Open - accessible to all site users'; /* WAS: 'Private - accessible only to space members' */
-    $data['group_access']['settings']['allowed_values']['1'] = 'Private - accessible only to space members'; /* WAS: 'Public - accessible to all site users' */
+    $data['group_access']['settings']['allowed_values']['1'] = 'By Invitation - accessible only to space members'; /* WAS: 'Public - accessible to all site users' */
   }
 }
 
