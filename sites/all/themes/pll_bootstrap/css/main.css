@@ -2161,6 +2161,137 @@ a[data-toggle="lightbox-image"]:hover img {
 #block-views-user-header-block .views-field-field-user-display-name .profile-social div:last-child {
   margin: 0 0 0 8px;
 }
+
+/* Spaces */
+
+ /*
+ .node-type-oa-space .container {
+   width: auto;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 0;
+ }
+ */
+
+.oa-space-menu.navbar-inverse {
+  background: #f9fafc;
+  border: none;
+  margin-bottom: 0;
+  padding-bottom: 42px;
+}
+
+.oa-space-menu li {
+  float: left;
+  font-size: 16px;
+}
+
+.oa-space-menu li.active a.active {
+  color: #646b76;
+}
+
+.node-type-oa-space h2.highlighted {
+  background:  rgb(154, 0, 50);
+  color: white;
+  padding: 15px;
+  width: 100%;
+}
+
+.node-type-oa-space .item-list h3 {
+  margin-left: 15px;
+  font-size: 15px;
+}
+
+#mini-panel-pll_space_activity {
+  position: relative;
+}
+
+.pane-add-space-content {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 141px;
+}
+
+.pane-add-space-content a {
+  color: #394263;
+}
+
+.pane-add-space-content .caret:before {
+  content: "+";
+  color: black;
+  font-weight: bold;
+}
+
+.pane-add-space-content .caret {
+  border: none;
+  height: auto;
+}
+
+.pane-pll-recent-activity-section-activity .view-filters {
+  position: absolute;
+  top: 4px;
+  right: -16px
+}
+
+.pane-pll-recent-activity-section-activity .form-control.form-select {
+  padding: 0;
+}
+
+.pane-pll-recent-activity-section-activity ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.pane-pll-recent-activity-section-activity .well {
+  background-color: white;
+  padding: 25px;
+  margin-bottom: 0px;
+}
+
+.pane-pll-recent-activity-section-activity .pll-oa-river strong {
+  display: block;
+  font-size: 16px;
+  margin: 16px 0;
+}
+
+.pane-pll-recent-activity-section-activity .accordion-heading span {
+  display: block;
+  margin-left: 109px;
+  color: #838891;
+}
+
+.pane-pll-recent-activity-section-activity .oa-river .pull-left {
+    padding: 2px 27px 2px 2px;
+}
+
+.pane-pll-recent-activity-section-activity .oa-list-header {
+  color: #838891;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.pane-pll-recent-activity-section-activity .pager {
+  text-align: left;
+  padding: 15px;
+}
+
+.pager-load-more li>a {
+  background-color: #ffb600;
+  color: black;
+  padding: 15px;
+  border-radius: 0;
+  font-weight: bold;
+
+}
+
+
+.pager-load-more li>a:after {
+  border-top-width: 0;
+  border-bottom: 4px solid #000000;
+
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -2775,7 +2906,8 @@ textarea.form-control {
 }
 
 .bryant-flipped-content-region .view-oa-recent-activity .views-row img.oa-medium-thumbnail,
-.brenham-flipped-column-content .view-oa-recent-activity .views-row img.oa-medium-thumbnail {
+.brenham-flipped-column-content .view-oa-recent-activity .views-row img.oa-medium-thumbnail,
+img.pll-user {
   border-radius: 50%;
   border: 0;
 }
