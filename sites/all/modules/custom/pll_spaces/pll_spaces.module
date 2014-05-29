@@ -179,6 +179,25 @@ function pll_spaces_node_insert($node) {
   }
 }
 
+/**
+ * Implements hook_theme()
+ */
+function pll_spaces_theme() {
+  return array(
+    'views_view_fields__pll_recent_activity__panel_pane' => array(
+      'template'  => 'views-view-fields--oa-recent-activity--panel-pane',
+      'base hook' => 'views_view_fields',
+      'preprocess functions' => array(
+        'template_preprocess',
+        'template_preprocess_views_view_fields',
+        'oa_core_preprocess_views_view_fields',
+      ),
+      'arguments' => array('view' => NULL, 'options' => NULL, 'row' => NULL),
+      'path' => drupal_get_path('module', 'pll_spaces') . '/templates',
+    ),
+  );
+}
+
 function pll_spaces_views_pre_render(&$view) {
   // Add Create Task button to bottom of Space Tasks pane
   if ($view->name == 'pll_worktracker' && $view->current_display == 'task_list' && user_access('create oa_worktracker_task content')) {
