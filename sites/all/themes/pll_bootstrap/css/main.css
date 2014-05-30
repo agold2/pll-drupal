@@ -2189,6 +2189,10 @@ a[data-toggle="lightbox-image"]:hover img {
   color: #646b76;
 }
 
+.oa-space-menu.navbar-inverse .nav > li > a, .oa-space-menu.navbar .nav > li > a {
+  color: #1bbae1;
+}
+
 .node-type-oa-space h2.highlighted {
   background:  rgb(154, 0, 50);
   color: white;
@@ -2196,7 +2200,7 @@ a[data-toggle="lightbox-image"]:hover img {
   width: 100%;
 }
 
-.node-type-oa-space .item-list h3 {
+.pane-pll-recent-activity-section-activity .group-header h3 {
   margin-left: 15px;
   font-size: 15px;
 }
@@ -2907,7 +2911,8 @@ textarea.form-control {
 
 .bryant-flipped-content-region .view-oa-recent-activity .views-row img.oa-medium-thumbnail,
 .brenham-flipped-column-content .view-oa-recent-activity .views-row img.oa-medium-thumbnail,
-img.pll-user {
+img.pll-user-activity,
+.pane-pll-recent-activity-section-activity img.pll-user {
   border-radius: 50%;
   border: 0;
 }
