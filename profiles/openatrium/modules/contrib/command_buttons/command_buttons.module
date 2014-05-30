@@ -814,6 +814,7 @@ function command_buttons_machine_name_load($buttons) {
     ->fields('b', array('bid'))
     ->condition('bundle', 'node_add')
     ->condition('name', $buttons, 'IN')
+    ->orderBy('title')
     ->execute();
 
   while ($result = $results->fetchObject()) {

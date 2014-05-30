@@ -2164,15 +2164,6 @@ a[data-toggle="lightbox-image"]:hover img {
 
 /* Spaces */
 
- /*
- .node-type-oa-space .container {
-   width: auto;
-   margin-left: auto;
-   margin-right: auto;
-   padding: 0;
- }
- */
-
 .oa-space-menu.navbar-inverse {
   background: #f9fafc;
   border: none;
@@ -2294,6 +2285,50 @@ a[data-toggle="lightbox-image"]:hover img {
   border-top-width: 0;
   border-bottom: 4px solid #000000;
 
+}
+
+.oa-event-date-wrapper {
+  height: 66px;
+  width: 61px;
+  background: none repeat scroll 0 0 #9a0032;
+  margin: 0px;
+}
+
+.oa-event-date-month-wrapper,
+.oa-event-date-day-wrapper {
+  background: none repeat scroll 0 0 #9a0032;
+  color: white;
+  margin: 0;
+}
+
+.oa-event-date-month {
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+
+.oa-event-date-day-wrapper {
+  height: 65%;
+}
+
+.oa-event-date-day {
+  padding-top: 0;
+}
+
+.view-oa-event-list .views-row {
+  position: relative;
+}
+
+.view-oa-event-list .views-field-title a {
+  position: absolute;
+  top: 19px;
+  left: 100px;
+  font-size: 14px;
+}
+
+.view-oa-event-list .views-field-field-oa-date-1 {
+  position: absolute;
+  top: 50px;
+  left: 100px;
 }
 
 /* Typography */
